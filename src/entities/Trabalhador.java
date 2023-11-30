@@ -88,4 +88,19 @@ public class Trabalhador {
                 }
         return soma;
     }//fim do metodo renda
-}
+    //Matodo do texto informativo da renda
+    public String info(String dt) {
+        int mes = Integer.parseInt(dt.substring(0,2));
+        int ano = Integer.parseInt(dt.substring(3));
+        StringBuilder sb = new StringBuilder();
+        sb.append("\nNome: ");
+        sb.append(getNome());
+        sb.append("\nDepartamento: ");
+        sb.append(getDepartamento().getNome());
+        sb.append("\nRenda em ");
+        sb.append(dt);
+        sb.append(": R$");
+        sb.append(String.format("%.2f",renda(ano,mes)));
+        return sb.toString();
+    }//fim do metodo info
+}//fim da classe trabalhador

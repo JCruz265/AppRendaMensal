@@ -27,8 +27,8 @@ public class Program {
         sc.nextLine();
         String nome = sc.nextLine();
         System.out.println("Digite o número correspondente ao nivel da carreira\n" +
-                "1 - JUNIOR\n" +
-                "2 - MEDIO\n" +
+                "1 - JUNIOR - " +
+                "2 - MEDIO - " +
                 "3 - SENIOR");
         int n = sc.nextInt();
         String nivel = (n == 1)? "JUNIOR": (n == 2)? "MEDIO": "SENIOR";
@@ -52,12 +52,7 @@ public class Program {
         }
         //Dados para informar a renda do trabalhador
         System.out.print("Informe o mês e o ano para o calculo da renda(MM/YYYY): ");
-        String data = sc.next();
-        int mes = Integer.parseInt(data.substring(0,2));
-        int ano = Integer.parseInt(data.substring(3));
-        System.out.println("Nome: "+trabalhador.getNome());
-        System.out.println("Departamento: "+trabalhador.getDepartamento().getNome());
-        System.out.println("Renda em "+data+" : "+trabalhador.renda(ano,mes));
+        System.out.print(trabalhador.info(sc.next()));
         sc.close();//fim do metodo de entrada
     }// fim do metodo principal
 }//fim do programa
